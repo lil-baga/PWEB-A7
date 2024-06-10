@@ -19,6 +19,18 @@
                         <h1 class="text-6xl"><?php echo count($sempro) ?></h1>
                     </div>
                 </div>
+                <div class="flex flex-col items-center justify-center">
+                    <?php if (!isset($_SESSION['user'])) : ?>
+                    <?php else : ?>
+                        <?php if (($_SESSION['user']['roles_id'] == 1)) : ?>
+                            <form action="<?=urlpath('register')?>" method="GET">
+                                <button type="submit" class="text-white text-sm inline-block rounded-lg shadow-lg px-4 py-2 mt-2 bg-green-500 hover:bg-green-700">
+                                    Tambah Akun Pegawai Tata Usaha
+                                </button>
+                            </form>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
         <div class="flex flex-row items-center">
@@ -27,7 +39,7 @@
                     Record Proposal Skripsi
                     <p class="mt-1 text-sm font-normal text-slate-500">Anda dapat melihat record proposal skripsi terbaru di sini.</p>
                     <p class="mt-1 text-sm font-normal text-slate-500">Cari Berdasarkan Nama, NIM, atau Judul</p>
-                    <form class="max-w-md mx-auto mt-6 mb-4">
+                    <div class="max-w-md mx-auto mt-6 mb-4">
                         <label for="live-search" class="mb-2 text-sm font-normal text-gray-900 sr-only">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -35,12 +47,12 @@
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </div>
-                            <input type="search" id="live-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Cari Jadwal Sempro" />
-                    </form>
+                            <input type="text" id="live-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Cari Jadwal Sempro" />
+                        </div>
                 </div>
                 <div class="w-full h-[570px] font-normal shadow-lg sm:rounded-lg border border-slate-300">
                     <div id="search-result" class="h-[570px] overflow-y-auto overflow-x-hidden">
-                        <table class="w-full text-xs text-left rtl:text-right text-slate-500 border border-slate-300">
+                        <table class="table w-full text-xs text-left rtl:text-right text-slate-500 border border-slate-300">
                             <thead class="text-xs text-center text-slate-700 uppercase bg-slate-50 border border-slate-300">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
@@ -104,6 +116,7 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="resources/js/live-search.js"></script>
     <!-- <script type="text/javascript">
         $(document).ready(function(){
             $("#live-search").keyup(function(){

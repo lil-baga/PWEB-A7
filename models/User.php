@@ -21,34 +21,22 @@ class User {
         }
     }
     
-    // static function register($data = [])
-    // {
-    //     global $conn;
+    static function register($data = [])
+    {
+        global $conn;
 
-    //     $username = $data['username'];
-    //     $password = $data['password'];
-    //     $nama = $data['nama'];
-    //     $roles_id = 2;
+        $username = $data['username'];
+        $nama = $data['nama'];
+        $password = $data['password'];
+        $roles_id = 2;
 
-    //     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    //     $sql = "INSERT INTO users SET nama = ?, username = ?, password = ?, phone = ?, email = ?";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bind_param('sssi', $nama, $username, $hashedPassword, $roles_id);
-    //     $stmt->execute();
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users SET username = ?, nama = ?, password = ?, roles_id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('sssi', $username, $nama, $hashedPassword, $roles_id);
+        $stmt->execute();
 
-    //     $result = $stmt->affected_rows > 0 ? true : false;
-    //     return $result;
-    // }
-
-    // static function getPassword($username)
-    // {
-    //     global $conn;
-    //     $sql = "SELECT password FROM users WHERE username = ?";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bind_param('s', $username);
-    //     $stmt->execute();
-
-    //     $result = $stmt->affected_rows > 0 ? true : false;
-    //     return $result;
-    // }
+        $result = $stmt->affected_rows > 0 ? true : false;
+        return $result;
+    }
 }

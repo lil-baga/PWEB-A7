@@ -1,6 +1,6 @@
 RewriteEngine On
-    RewriteBase /PWEB-A7/
+    RewriteBase /uas/
     RewriteRule ^index\\.php$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /PWEB-A7/index.php [L]    
+    RewriteRule . /uas/index.php [L]    

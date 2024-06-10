@@ -5,11 +5,11 @@ include_once 'models/User.php';
 
 class AuthController {
     static function login() {
-        view('auth/layout', ['url' => 'login']);
+        view('Auth/layout', ['url' => 'login', 'title' => 'Login']);
     }
 
     static function register() {
-        view('auth/layout', ['url' => 'register']);
+        view('Auth/layout', ['url' => 'register', 'title' => 'Register']);
     }
     
     static function sessionLogin() {
@@ -29,22 +29,22 @@ class AuthController {
         }
     }
 
-    // static function saveRegister() {
-    //     $post = array_map('htmlspecialchars', $_POST);
+    static function newRegister() {
+        $post = array_map('htmlspecialchars', $_POST);
 
-    //     $user = User::register([
-    //         'name' => $post['name'], 
-    //         'username' => $post['username'], 
-    //         'password' => $post['password']
-    //     ]);
+        $register = User::register([
+            'username' => $post['username'], 
+            'nama' => $post['nama'], 
+            'password' => $post['password']
+        ]);
 
-    //     if ($user) {
-    //         header('Location: '.BASEURL.'login');
-    //     }
-    //     else {
-    //         header('Location: '.BASEURL.'register?failed=true');
-    //     }
-    // }
+        if ($register) {
+            header('Location: '.BASEURL.'l');
+        }
+        else {
+            header('Location: '.BASEURL.'register');
+        }
+    }
 
     static function logout() {
         $_SESSION = array();

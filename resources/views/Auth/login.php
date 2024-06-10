@@ -4,7 +4,7 @@
             <div class="italic">
                 <p class="text-4xl font-bold mb-2">Login</p>
                 <p class="text-xl mb-8">Masuk sebagai Tata Usaha.</p>
-                <form action="login" method="POST" enctype="multipart/form-data" class="flex flex-col w-full h-full mx-auto gap-8">
+                <form action="<?=urlpath('login')?>" method="POST" enctype="multipart/form-data" class="flex flex-col w-full h-full mx-auto gap-8">
                     <div>
                         <label for="username" class="block mb-2 text-xl font-medium text-gray-900">Username</label>
                         <div class="flex">
@@ -33,7 +33,7 @@
                 </form>
             </div>
             <div class="flex justify-center items-center">
-                <img class="w-[512px]" src="resources/img/storyset-1.png" alt="storyset-1">
+                <img class="w-[512px]" src="resources/img/storyset-2.png" alt="storyset-2">
             </div>
         </div>
     </div>

@@ -6,13 +6,13 @@
                 <p class="mt-1 text-sm font-normal text-slate-500">Anda dapat melihat jadwal proposal skripsi terbaru di sini.</p>
                 <?php if (!isset($_SESSION['user'])) : ?>
                 <?php else : ?>
-                    <?php if (($_SESSION['user']['id'] == 2)) : ?>
+                    <?php if (($_SESSION['user']['roles_id'] == 2)) : ?>
                         <button data-modal-target="modal-tambah" data-modal-toggle="modal-tambah" class="text-white text-sm inline-block rounded-lg shadow-lg px-4 py-2 mt-2 bg-green-500 hover:bg-green-700">
                             Tambah Jadwal
                         </button>
                     <?php endif; ?>
                 <?php endif; ?>
-                <form class="max-w-md mx-auto mb-4">
+                <div class="max-w-md mx-auto mt-6 mb-4">
                     <label for="default-search" class="mb-2 text-sm font-normal text-gray-900 sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -21,7 +21,7 @@
                             </svg>
                         </div>
                         <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Cari Jadwal Sempro" />
-                </form>
+                </div>
             </div>
             <div class="w-full h-[570px] font-normal shadow-lg sm:rounded-lg border border-slate-300">
                 <div class="h-[570px] overflow-y-auto overflow-x-hidden">
@@ -120,7 +120,7 @@
                                                     </div>
                                                     <?php if (!isset($_SESSION['user'])) : ?>
                                                     <?php else : ?>
-                                                        <?php if (($_SESSION['user']['id'] == 2)) : ?>
+                                                        <?php if (($_SESSION['user']['roles_id'] == 2)) : ?>
                                                             <div class="flex flex-row items-center justify-center">
                                                                 <a data-modal-target="modal-edit-<?php echo $s['id']; ?>" data-modal-toggle="modal-edit-<?php echo $s['id']; ?>" class="button bg-blue-500 transition-colors flex flex-row items-center justify-center hover:cursor-pointer hover:bg-blue-700 text-white font-medium py-2 px-4 rounded gap-2" title="Edit">
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -328,7 +328,7 @@
         </div>
 
         <!-- Create modal -->
-        <div id="modal-tambah" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div id="modal-tambah" data-modal-backdrop="static" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-4xl max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow p-4">
@@ -346,7 +346,7 @@
                     </div>
                     <!-- Modal AddSempro -->
                     <form action="<?= urlpath('addsempro') ?>" method="POST">
-                        <div class="grid gap-6 mb-4 grid-cols-2">
+                        <div class="grid gap-6 mt-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
                                 <label for="nama" class="block mb-2 text-sm font-medium text-gray-900">Nama</label>
                                 <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Nama Mahasiswa" required="">

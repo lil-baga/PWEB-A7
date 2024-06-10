@@ -6,7 +6,7 @@ include_once 'models/Dosen.php';
 
 class SemproController {
     static function indexJadwal() {
-        view('sempro/layout', ['url' => 'viewSempro', 'title' => 'Jadwal Sempro', 'sempro' => Sempro::getSempro(), 'dosen' => Dosen::getDosen()]);
+        view('Sempro/layout', ['url' => 'viewSempro', 'title' => 'Jadwal Sempro', 'sempro' => Sempro::getSempro(), 'dosen' => Dosen::getDosen()]);
     }
     
     static function store() {

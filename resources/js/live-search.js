@@ -1,8 +1,10 @@
 $(document).ready(function() {
     function filterRows(searchText) {
         $('.table tbody tr').each(function() {
-            var judul = $(this).find('td:eq(0)').text().toLowerCase();
-            if (searchText === '' || judul.includes(searchText)) {
+            var nama = $(this).find('td:eq(0)').text().toLowerCase();
+            var nim = $(this).find('td:eq(1)').text().toLowerCase();
+            var judul = $(this).find('td:eq(2)').text().toLowerCase();
+            if (searchText === '' || nama.includes(searchText) || nim.includes(searchText) || judul.includes(searchText)) {
                 $(this).show();
             } else {
                 $(this).hide();

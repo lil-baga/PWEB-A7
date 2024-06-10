@@ -2,9 +2,9 @@
     <div class="flex flex-row justify-center items-center w-screen h-full mt-32 px-16 py-16">
         <div class="flex justify-center items-center gap-64">
             <div class="italic">
-                <p class="text-4xl font-bold mb-2">Login</p>
-                <p class="text-xl mb-8">Masuk sebagai Tata Usaha.</p>
-                <form action="login" method="POST" enctype="multipart/form-data" class="flex flex-col w-full h-full mx-auto gap-8">
+                <p class="text-4xl font-bold mb-2">Register</p>
+                <p class="text-xl mb-8">Daftarkan Akun Untuk Tata Usaha.</p>
+                <form action="<?=urlpath('register')?>" method="POST" enctype="multipart/form-data" class="flex flex-col w-full h-full mx-auto gap-8">
                     <div>
                         <label for="username" class="block mb-2 text-xl font-medium text-gray-900">Username</label>
                         <div class="flex">
@@ -14,6 +14,17 @@
                                 </svg>
                             </span>
                             <input type="text" id="username" name="username" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-96 text-xl p-2.5" placeholder="Masukkan NRP">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="nama" class="block mb-2 text-xl font-medium text-gray-900">Nama</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 text-xl text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md">
+                                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+                                </svg>
+                            </span>
+                            <input type="text" id="nama" name="nama" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-96 text-xl p-2.5" placeholder="Masukkan Nama">
                         </div>
                     </div>
                     <div>
@@ -28,12 +39,12 @@
                         </div>
                     </div>
                     <button type="submit" class="text-white text-xl inline-block rounded-lg shadow-lg px-4 py-4 bg-blue-500 hover:bg-blue-700">
-                        Login
+                        Register
                     </button>
                 </form>
             </div>
             <div class="flex justify-center items-center">
-                <img class="w-[512px]" src="resources/img/storyset-1.png" alt="storyset-1">
+                <img class="w-[512px]" src="resources/img/storyset-3.png" alt="storyset-3">
             </div>
         </div>
     </div>

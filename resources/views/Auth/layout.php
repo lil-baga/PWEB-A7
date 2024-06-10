@@ -1,11 +1,11 @@
-<?php $title = 'Login'; ?>
+<?php $title = $title; ?>
 
 <?php
 ob_start();
 include '/resources/css/style.css';
 $style = ob_get_clean();
 ?>
-<?php include_once 'resources/views/layout/navbar.php'; ?>
+<?php include_once 'resources/views/Layout/navbar.php'; ?>
 
 <?php
 if (isset($url)) {
@@ -13,4 +13,4 @@ if (isset($url)) {
 }
 ?>
 
-<?php include_once 'resources/views/layout/navbar.php'; ?>
+<?php include_once 'resources/views/Layout/navbar.php'; ?>
