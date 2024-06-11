@@ -22,9 +22,11 @@ class AuthController {
         if ($user) {
             unset($user['password']);
             $_SESSION['user'] = $user;
-            header('Location: '.BASEURL.'dashboard');
+            $_SESSION['status'] = 'Anda Berhasil Login!';
+            header('Location: '.BASEURL.'landing');
         }
         else {
+            $_SESSION['status'] = 'Login Gagal, Coba Lagi!';
             header('Location: '.BASEURL.'login');
         }
     }
@@ -39,9 +41,11 @@ class AuthController {
         ]);
 
         if ($register) {
-            header('Location: '.BASEURL.'l');
+            $_SESSION['status'] = 'Anda Berhasil Membuat Akun TU!';
+            header('Location: '.BASEURL.'dashboard');
         }
         else {
+            $_SESSION['status'] = 'Register Gagal, Coba Lagi!';
             header('Location: '.BASEURL.'register');
         }
     }
@@ -58,6 +62,7 @@ class AuthController {
         }
 
         session_destroy();
+        $_SESSION['status'] = 'Anda Berhasil Logout!';
         header('Location: '.BASEURL);
     }
 }

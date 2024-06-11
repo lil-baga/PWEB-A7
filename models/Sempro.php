@@ -25,10 +25,11 @@ class Sempro {
         $pembahas2_id = $data['pembahas2_id'];
         $pembimbing1_id = $data['pembimbing1_id'];
         $pembimbing2_id = $data['pembimbing2_id'];
+        $users_id = $_SESSION['user']['id'];
 
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO sempro (nama, nim, judul, tanggal, pembahas1_id, pembahas2_id, pembimbing1_id, pembimbing2_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssiiii", $nama, $nim, $judul, $tanggal, $pembahas1_id, $pembahas2_id, $pembimbing1_id, $pembimbing2_id);
+        $stmt = $conn->prepare("INSERT INTO sempro (nama, nim, judul, tanggal, pembahas1_id, pembahas2_id, pembimbing1_id, pembimbing2_id, users_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssiiiii", $nama, $nim, $judul, $tanggal, $pembahas1_id, $pembahas2_id, $pembimbing1_id, $pembimbing2_id, $users_id);
         $stmt->execute();
         return $conn->insert_id;
     }

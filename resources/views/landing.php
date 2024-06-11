@@ -6,7 +6,7 @@
                 <p class="text-4xl">Teman Setia Menuntun Ilmu</p>
                 <p class="text-4xl mb-4">Temukan Solusi Skripsimu Disini!</p>
                 <div class="flex items-center">
-                    <a href="<?= urlpath("dashboard")?>" class="text-white text-xl inline-block rounded-lg shadow-lg px-4 py-4 bg-blue-500 hover:bg-blue-700">
+                    <a href="<?= urlpath("dashboard") ?>" class="text-white text-xl inline-block rounded-lg shadow-lg px-4 py-4 bg-blue-500 hover:bg-blue-700">
                         Mulai Sekarang
                     </a>
                 </div>

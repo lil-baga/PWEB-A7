@@ -27,6 +27,7 @@ class SemproController {
             ]);
 
             if ($sempro) {
+                $_SESSION['status'] = 'Jadwal Sempro Berhasil Ditambahkan!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             } else {
                 echo ('Error');
@@ -53,8 +54,10 @@ class SemproController {
             ]);
 
             if ($sempro) {
+                $_SESSION['status'] = 'Jadwal Sempro Berhasil Diupdate!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             } else {
+                $_SESSION['status'] = 'Jadwal Sempro Berhasil Diupdate!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             }
         }
@@ -74,8 +77,10 @@ class SemproController {
             ]);
 
             if ($sempro) {
+                $_SESSION['status'] = 'Link Sempro Berhasil Diupdate!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             } else {
+                $_SESSION['status'] = 'Link Sempro Berhasil Diupdate!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             }
         }
@@ -89,6 +94,7 @@ class SemproController {
         else {
             $sempro = Sempro::delete($_GET['id']);
             if ($sempro) {
+                $_SESSION['status'] = 'Jadwal Sempro Dihapus dan Pindah ke Halaman Dashboard!';
                 header('Location: ' . BASEURL . 'jadwalsempro');
             } else {
                 echo ('Error');
