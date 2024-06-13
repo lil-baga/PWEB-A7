@@ -69,7 +69,7 @@
                                 </thead>
                                 <tbody>
                                     <?php if (isset($sempro)) :
-                                        foreach ($sempro as $s) :
+                                        foreach ($record as $s) :
                                             if ($s['deleted_at'] != NULL) : ?>
                                                 <tr class="bg-white border-b text-center border border-slate-300">
                                                     <td class="px-6 py-4 border border-slate-300">

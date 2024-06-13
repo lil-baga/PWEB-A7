@@ -203,7 +203,7 @@
                                                             </button>
                                                         </div>
                                                         <!-- Modal EditSempro -->
-                                                        <form action="<?= urlpath("editsempro?id=" . $s['id']); ?>" method="POST" enctype="multipart/form-data novalidate">
+                                                        <form action="<?= urlpath("editsempro?id=" . $s['id']); ?>" method="POST" enctype="multipart/form-data novalidate" novalidate>
                                                             <input hidden type="number" name="id" id="id" value="<?php echo $s['id']; ?>" class="hidden bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5" required="">
                                                             <div class="grid gap-6 mt-4 mb-4 grid-cols-2">
                                                                 <div class="col-span-2">

@@ -5,7 +5,7 @@ class Sempro {
     static function getSempro()
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM sempro");
+        $stmt = $conn->prepare("SELECT * FROM sempro ORDER BY tanggal ASC");
         $stmt->execute();
         $result = $stmt->get_result();
         $sempro = array();
@@ -31,7 +31,7 @@ class Sempro {
     static function getRecord()
     {
         global $conn;
-        $stmt = $conn->prepare("SELECT * FROM sempro WHERE deleted_at IS NOT NULL");
+        $stmt = $conn->prepare("SELECT * FROM sempro WHERE deleted_at IS NOT NULL ORDER BY deleted_at DESC");
         $stmt->execute();
         $result = $stmt->get_result();
         $sempro = array();

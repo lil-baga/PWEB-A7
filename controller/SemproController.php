@@ -95,7 +95,7 @@ class SemproController {
             exit;
         } else {
             $post = array_map('htmlspecialchars', $_POST);
-            if ( empty( $post[ 'proposal' ] ) || empty( $post[ 'link_zoom' ] ) || empty( $post[ 'link_record' ])) {
+            if ( empty( $_FILES[ 'proposal' ] ) || empty( $post[ 'link_zoom' ] ) || empty( $post[ 'link_record' ])) {
                 $_SESSION['status'] = 'Seluruh Form Wajib Diisi!';
                 header('Location: '.BASEURL.'jadwalsempro');
             }
