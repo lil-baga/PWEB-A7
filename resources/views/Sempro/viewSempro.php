@@ -162,7 +162,7 @@
                                                             </button>
                                                         </div>
                                                         <!-- Modal AddRecord -->
-                                                        <form action="<?= urlpath("addlink?id=" . $s['id']) ?>" enctype="multipart/form-data" method="POST">
+                                                        <form action="<?= urlpath("addlink?id=" . $s['id']) ?>" enctype="multipart/form-data" method="POST" novalidate>
                                                             <input hidden type="number" name="id" id="id" value="<?php echo $s['id']; ?>" class="hidden bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5" required="">
                                                             <div class="grid gap-6 mt-4 mb-4 grid-cols-2">
                                                                 <div class="col-span-2">
@@ -203,7 +203,7 @@
                                                             </button>
                                                         </div>
                                                         <!-- Modal EditSempro -->
-                                                        <form action="<?= urlpath("editsempro?id=" . $s['id']); ?>" method="POST" enctype="multipart/form-data">
+                                                        <form action="<?= urlpath("editsempro?id=" . $s['id']); ?>" method="POST" enctype="multipart/form-data novalidate">
                                                             <input hidden type="number" name="id" id="id" value="<?php echo $s['id']; ?>" class="hidden bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5" required="">
                                                             <div class="grid gap-6 mt-4 mb-4 grid-cols-2">
                                                                 <div class="col-span-2">
@@ -348,7 +348,7 @@
                             </button>
                         </div>
                         <!-- Modal AddSempro -->
-                        <form action="<?= urlpath('addsempro') ?>" method="POST">
+                        <form action="<?= urlpath('addsempro') ?>" method="POST" novalidate>
                             <div class="grid gap-6 mt-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
                                     <label for="nama" class="block mb-2 text-sm font-medium text-slate-900">Nama</label>

@@ -9,7 +9,14 @@ class AuthController {
     }
 
     static function register() {
-        view('Auth/layout', ['url' => 'register', 'title' => 'Register']);
+        if ($_SESSION['user']['id'] != 1) {
+            $_SESSION['status'] = 'Anda Dilarang Mengakses Kecuali Admin!';
+            header('Location: ' . BASEURL);
+            exit;
+        } 
+        else{
+            view('Auth/layout', ['url' => 'register', 'title' => 'Register']);
+        }
     }
     
     static function sessionLogin() {
